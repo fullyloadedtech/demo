@@ -17,7 +17,7 @@ class CalendarWidget extends FullCalendarWidget
             [
                 'id' => 1,
                 'title' => 'Breakfast!',
-                'start' => now()
+                'start' => now(),
             ],
             [
                 'id' => 2,
@@ -25,7 +25,7 @@ class CalendarWidget extends FullCalendarWidget
                 'start' => now()->addDay(),
                 'url' => 'https://some-url.com',
                 'shouldOpenInNewTab' => true,
-            ]
+            ],
         ];
     }
 }
