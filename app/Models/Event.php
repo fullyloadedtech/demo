@@ -11,16 +11,16 @@ class Event extends Model
     use SoftDeletes;
 
     /**
-    * @var  string
-    */
+     * @var  string
+     */
     protected $table = 'events';
 
     protected $casts = [
-    'created_at' => 'datetime',
-    'updated_at' => 'datetime',
-    'deleted_at' => 'datetime',
-    'start' => 'datetime',
-    'end' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
+        'start' => 'datetime',
+        'end' => 'datetime',
     ];
 
     // REVERSE THIS AFTER INITIAL IMPORT
@@ -31,32 +31,33 @@ class Event extends Model
     //    return $this->belongsTo(\App\User::class);
     //}
 
-
     public function validate($data, $scenario)
     {
-        switch ($scenario)
-        {
+        switch ($scenario) {
             case 'create':
             case 'update':
                 $rules = [
                     'title' => 'required',
                     'start' => 'required|date',
-                    'end' => 'required|date|after_or_equal:start'
+                    'end' => 'required|date|after_or_equal:start',
                 ];
 
                 break;
         }
+
         return Validator::make($data, $rules);
     }
 
     public function scopeFilter($query, $data)
     {
-        if (!empty($data['start']))
+        if (! empty($data['start'])) {
             $query->where('start', '>=', $data['start']);
-        if (!empty($data['end']))
+        }
+        if (! empty($data['end'])) {
             $query->where('end', '<=', $data['end']);
+        }
         $query->whereHas('user');
+
         return $query;
     }
-
 }

@@ -6,7 +6,6 @@ use Saade\FilamentFullCalendar\Widgets\FullCalendarWidget;
 
 class CalendarWidget extends FullCalendarWidget
 {
-
     protected static string $view = 'filament.resources.event-resource.widgets.calendar-widget';
 
     /**
@@ -18,7 +17,7 @@ class CalendarWidget extends FullCalendarWidget
             [
                 'id' => 1,
                 'title' => 'Breakfast!',
-                'start' => now()
+                'start' => now(),
             ],
             [
                 'id' => 2,
@@ -26,7 +25,7 @@ class CalendarWidget extends FullCalendarWidget
                 'start' => now()->addDay(),
                 'url' => 'https://some-url.com',
                 'shouldOpenInNewTab' => true,
-            ]
+            ],
         ];
     }
 
