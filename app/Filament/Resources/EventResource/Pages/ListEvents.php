@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\EventResource\Pages;
 
 use App\Filament\Resources\EventResource;
+use App\Filament\Resources\EventResource\Widgets\CalendarWidget;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
-use App\Filament\Resources\EventResource\Widgets\CalendarWidget;
 
 class ListEvents extends ListRecords
 {
@@ -21,7 +21,7 @@ class ListEvents extends ListRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            CalendarWidget::class
+            CalendarWidget::class,
         ];
     }
 }
