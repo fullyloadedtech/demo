@@ -2,8 +2,8 @@
 
 namespace App\Policies\Shop;
 
-use App\Models\User;
 use App\Models\Shop\Category;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CategoryPolicy
@@ -147,5 +147,4 @@ class CategoryPolicy
     {
         return $user->can('reorder_shop::category');
     }
-
 }

@@ -2,8 +2,8 @@
 
 namespace App\Policies\Shop;
 
-use App\Models\User;
 use App\Models\Shop\Order;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrderPolicy
@@ -147,5 +147,4 @@ class OrderPolicy
     {
         return $user->can('reorder_shop::order');
     }
-
 }

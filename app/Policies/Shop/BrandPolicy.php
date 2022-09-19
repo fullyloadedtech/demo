@@ -2,8 +2,8 @@
 
 namespace App\Policies\Shop;
 
-use App\Models\User;
 use App\Models\Shop\Brand;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BrandPolicy
@@ -147,5 +147,4 @@ class BrandPolicy
     {
         return $user->can('reorder_shop::brand');
     }
-
 }

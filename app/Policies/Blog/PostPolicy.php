@@ -2,8 +2,8 @@
 
 namespace App\Policies\Blog;
 
-use App\Models\User;
 use App\Models\Blog\Post;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy
@@ -147,5 +147,4 @@ class PostPolicy
     {
         return $user->can('reorder_blog::post');
     }
-
 }

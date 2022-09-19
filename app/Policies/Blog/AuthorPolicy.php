@@ -2,8 +2,8 @@
 
 namespace App\Policies\Blog;
 
-use App\Models\User;
 use App\Models\Blog\Author;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AuthorPolicy
@@ -147,5 +147,4 @@ class AuthorPolicy
     {
         return $user->can('reorder_blog::author');
     }
-
 }
